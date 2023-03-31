@@ -1,5 +1,7 @@
 import unittest
+
 import code as c
+
 
 class TestOnlineStore(unittest.TestCase):
 
@@ -10,6 +12,7 @@ class TestOnlineStore(unittest.TestCase):
         reimbursement = c.Item(type='payment', description='reimbursement_4', amount=-1e19, quantity=1)
         order_4 = c.Order(id='4', items=[payment, tv, reimbursement])
         self.assertEqual(c.validorder(order_4), 'Order ID: 4 - Payment imbalance: $-1000.00')
+
 
 if __name__ == '__main__':
     unittest.main()
