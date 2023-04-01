@@ -2,81 +2,8 @@
 
 _A GitHub Security Lab initiative, providing an in-repo learning experience, where learners secure intentionally vulnerable code._
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+Source: https://github.com/skills/secure-code-game
 
-- **Who is this for**: Developers, students.
-- **What you'll learn**: How to spot and fix vulnerable patterns in real-world code, build security into your workflows, and understand security alerts generated against your code. 
-- **What you'll build**: You will develop fixes on functional but vulnerable code.
-- **Prerequisites**: In this course, you will need some knowledge of `python3` for most levels and `C` for Level 2.
-- **How long**: This course is five levels long and takes 8-10 hours to complete.
-
-## How to start this course
-
-1. Right-click **Start course** and open the link in a new tab.
-   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](https://github.com/skills/secure-code-game/generate)
-2. In the new tab, follow the prompts to create a new repository.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository —private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   ![Screenshot of the "Create a new repository" page with the "Public" repo option highlighted](/images/create-repo.png)
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
-   
-## 🛠️ The set up
-  
-#### 🖥️ Using codespaces
-  
-All levels are configured to run instantly with GitHub Codespaces. If you chose to use codespaces, be aware that this course **will count towards your 60 hours of monthly free allowance**. For more information about GitHub Codespaces, see the "[GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview)." If you prefer to work locally, please follow the local installation guide in the next section.
-  
-1. To create a codespace, click the **Code** drop down button in the upper-right of your repository navigation bar.
-1. Click **Create codespace on main**.
-1. After creating a codespace wait for all background installations to complete. This should take less than two minutes.
-
-
-#### 💻 Local installation 
-
-Please note: You don't need a local installation if you are using GitHub Codespaces.
-
-The following local installation guide is adapted to Debian/Ubuntu and CentOS/RHEL.
-
-1. Open your terminal.
-2. Install OpenLDAP headers needed to compile `python-ldap`, depending on your Linux distribution. Check by running:
-```bash
-uname -a
-```
- - For Debian/Ubuntu, run:
- ```bash
-sudo apt-get update                                                             
-sudo apt-get install libldap2-dev libsasl2-dev                                  
-``` 
-- For CentOS/RHEL, run: 
-```bash
-sudo yum install python-devel openldap-devel
-```
-- Then, for both Debian/Ubuntu and CentOS/RHEL, install `pyOpenSSL` by running:
-```bash
-pip3 install pyOpenSSL
-```
-3. Install the other dependencies by running:
-```bash
-pip3 install -r requirements.txt
-```
-
-Once installation has completed, clone your repository to your local machine.
-1. From your repository, click the **Code** drop down button in the upper-right of your repository navigation bar.
-1. Select the `Local` tab from the menu.
-1. Copy your preferred URL.
-1. In your terminal, change the working directory to the location where you want the cloned directory.
-1. Type `git clone` and paste the copied URL.
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-```
-6. Press **Enter** to create your local clone.
-
-For more information about cloning repositories, see "[Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)."
-
-
-</details>
-   
 <details id=1>
 <summary><h2>Level 1: Black Friday</h2></summary>
 
@@ -217,30 +144,6 @@ For Levels 3-5, we encourage you to enable code scanning with CodeQL. For more i
 
 </details>
 
-
-<details id=X>
-<summary><h2>Finish</h2></summary>
-
-_Congratulations, you've completed this course!_
-
-Here's a recap of all the tasks you've accomplished in your repository:
-
-- You practiced secure code principles by spotting and fixing vulnerable patterns in real-world code
-- You assessed your solutions against exploits developed by GitHub Security Lab experts.
-- You utilized GitHub code scanning features and understood the security alerts generated against your code.
-
-### What's next?
-
-- Follow [GitHub Security Lab](https://twitter.com/ghsecuritylab) for the latest updates and announcements about this course.
-- Share your feedback on this course by emailing us at securitylab-social@github.com.
-- [Take another skills course](https://skills.github.com/).
-- [Read more about code security](https://docs.github.com/en/code-security).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
-
-</details>
-
 ---
-
-Get help: Email us at securitylab-social@github.com &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
 &copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
