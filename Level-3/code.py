@@ -23,9 +23,7 @@ class TaxPayer:
         if not path:
             pass
         
-        # defends against path traversal attacks
-        if path.startswith('/') or path.startswith('..'):
-            return None
+        self.__check_safe_path(path)
         
         # builds path
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -43,9 +41,21 @@ class TaxPayer:
         
         if not path:
             raise Exception("Error: Tax form is required for all users")
+
+        self.__check_safe_path(path)
        
         with open(path, 'rb') as form:
             tax_data = bytearray(form.read())
 
         # assume that taxa data is returned on screen after this
         return path
+
+    def __check_safe_path(self, path):
+        """Defends against path traversal attacks"""
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.normpath(os.path.join(base_dir, path))
+
+        # If the normalized base dir path is longer than the base_dir,
+        # then some sort of traversal happened.
+        if base_dir != os.path.commonpath([base_dir, filepath]):
+            raise Exception(f"Error: The path {path} is not a safe path.")

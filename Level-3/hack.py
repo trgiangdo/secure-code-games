@@ -11,16 +11,8 @@ class TestTaxPayer(unittest.TestCase):
         # user input to the profile picture
         input = './../../../../../etc/passwd'
         # the output of the function upon processing user input
-        output = test_obj.get_prof_picture(input)
-        
-        # the original function the method uses to come up with base directory
-        original_base_dir = os.path.dirname(os.path.abspath(__file__))
-        # the base directory that the code points on AFTER user input is supplied
-        # the trick here is to use the length of the original directory counting from left
-        resulted_based_dir = output[:len(os.path.dirname(os.path.abspath(__file__)))]
-        
-        # checks against path traversal by comparing the original to resulted directory
-        self.assertEqual(original_base_dir, resulted_based_dir)
+        with self.assertRaises(Exception):
+            test_obj.get_prof_picture(input)
 
     # Example 2 - path traversal exploited on get_tax_form_attachment
     def test_2(self):        
@@ -33,16 +25,8 @@ class TestTaxPayer(unittest.TestCase):
         # complete path for input
         input = base_dir + file_path
         # the output of the function upon processing user input
-        output = test_obj.get_tax_form_attachment(input)
-        
-        # the original function the method uses to come up with base directory
-        original_base_dir = os.path.dirname(os.path.abspath(__file__))
-        # the base directory that the code points on AFTER user input is supplied
-        # the trick here is to use the length of the original directory counting from left
-        resulted_based_dir = output[:len(os.path.dirname(os.path.abspath(__file__)))]
-        
-        # checks against path traversal by comparing the original to resulted directory
-        self.assertEqual(original_base_dir, resulted_based_dir)
+        with self.assertRaises(Exception):
+            test_obj.get_tax_form_attachment(input)
 
 
 if __name__ == '__main__':    
