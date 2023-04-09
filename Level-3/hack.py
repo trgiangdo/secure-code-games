@@ -1,11 +1,12 @@
-import unittest
 import os
+import unittest
+
 import code as c
 
+
 class TestTaxPayer(unittest.TestCase):
-    
     # Example 1 - path traversal exploited on get_prof_picture
-    def test_1(self): 
+    def test_1(self):
         # creates tax payer object with dummy username and password
         test_obj = c.TaxPayer('username_test', 'password_test')
         # user input to the profile picture
@@ -15,7 +16,7 @@ class TestTaxPayer(unittest.TestCase):
             test_obj.get_prof_picture(input)
 
     # Example 2 - path traversal exploited on get_tax_form_attachment
-    def test_2(self):        
+    def test_2(self):
         # creates tax payer object with dummy username and password
         test_obj = c.TaxPayer('username_test', 'password_test')
         # gets base directory
@@ -29,5 +30,5 @@ class TestTaxPayer(unittest.TestCase):
             test_obj.get_tax_form_attachment(input)
 
 
-if __name__ == '__main__':    
+if __name__ == '__main__':
     unittest.main()
