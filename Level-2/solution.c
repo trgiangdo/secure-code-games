@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////
 ///                                             ///
-///   Vulnerability was in line 49 of code.h    ///               
+///   Vulnerability was in line 49 of code.h    ///
 ///   Fix can be found in line 47 below         ///
 ///                                             ///
 ///////////////////////////////////////////////////
@@ -15,6 +15,7 @@
 #define SETTINGS_COUNT 10
 int userid_next = 1;
 
+
 typedef struct {
     bool isAdmin;
     long userid;
@@ -22,9 +23,10 @@ typedef struct {
     long setting[SETTINGS_COUNT];
 } user_account;
 
+
 user_account* create_user_account(bool isAdmin, const char* username) {
     user_account* ua;
-    if (strlen(username) > MAX_USERNAME_LEN) 
+    if (strlen(username) > MAX_USERNAME_LEN)
         return NULL;
     ua = malloc(sizeof (user_account));
     if (NULL == ua) {
@@ -37,6 +39,7 @@ user_account* create_user_account(bool isAdmin, const char* username) {
     memset(&ua->setting, 0, sizeof ua->setting);
     return ua;
 }
+
 
 bool update_setting(user_account* ua, const char *index, const char *value) {
     char *endptr;
@@ -56,7 +59,7 @@ bool update_setting(user_account* ua, const char *index, const char *value) {
 /*
 Buffer Overflow Vulnerabilty
 
-In hack.c, an attacker escalated privileges and became an admin by abusing 
+In hack.c, an attacker escalated privileges and became an admin by abusing
 the fact that the code wasn't checking for negative index values.
 
 Negative indexing here caused an unauthorized write to memory and affected a
